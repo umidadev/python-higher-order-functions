@@ -580,9 +580,16 @@ def get_full_names(data: dict) -> list[str]:
     Returns:
         list[str]: List of full names.
     """
-    pass
+    full_names = []
+    for user in data['results']:
+        full_name = user['name']['first'] + ' ' + user['name']['last']
+        full_names.append(full_name)
 
+    return full_name
 
+print(get_full_names(randomuser_data))
+
+     
 def get_users_by_country(data: dict, country: str) -> list[dict]:
     """
     Filters and returns users who live in a specific country.
